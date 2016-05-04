@@ -41,20 +41,20 @@ $(function() {
 
 	// prototype
 	function Human() {
-		this.name = 'Denis',
-		this.age = 19,
+		this.name = 'name',
+		this.age = 28,
 		this.sex = 'male',
-		this.height = 175,
-		this.weight = 90,
-		this.say = function() {
-			console.log('olololo');
+		this.height = 200,
+		this.weight = 60,
+		// this.say = function() {
+		// 	console.log('olololo');
 		}
 	}
 
 	function Worker() {
 		this.job = 'It company',
-		this.salary = 100,
-		this.age = 50,
+		this.salary = 1000$,
+		this.age = 23,
 		this.working = function() {
 			console.log('work');
 		}
@@ -73,9 +73,9 @@ $(function() {
 	Student.prototype = new Human();
 	Student.prototype = new Worker();
 
-	var newStudent1 = new Student('KNU', 787);
+	var newStudent1 = new Student('KAI', 787);
 	var newStudent2 = new Student('KPI', 467);
-	var newStudent3 = new Student('KNURE', 39658);
+	var newStudent3 = new Student('KNUBA', 39658);
 	//newStudent.working();
 	console.log('newStudent1', newStudent1.education);
 	console.log('newStudent2', newStudent2.education);
