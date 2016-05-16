@@ -39,45 +39,50 @@ $(function() {
 		}
 	});
 
-	// prototype
-	function Human() {
-		this.name = 'name',
-		this.age = 28,
-		this.sex = 'male',
-		this.height = 200,
-		this.weight = 60,
-		// this.say = function() {
-		// 	console.log('olololo');
-		}
-	}
+// prototype
+var human = {
+  name:'name',
+  age : 28,
+  sex : 'male',
+  height : 200,
+  weight : 60,
+};
 
-	function Worker() {
-		this.job = 'It company',
-		this.salary = 1000$,
-		this.age = 23,
-		this.working = function() {
-			console.log('work');
-		}
+var student={
+  education:'Student',
+  grant: 'grunt',
+  watchShow:function () {
+    this.weight++;
+    this.grant--;
+  }
+};
 
-	}
+var worker={
+  education:'Worker',
+  salary: '1000$',
+  work:function () {
+    this.weight--;
+    this.salary++;
+  }
+};
 
-	function Student(_education, _grant) {
-		this.education = _education,
-		this.grant = _grant,
-		this.watch = function() {
-			console.log('watch');
-		}
-	}
+student.__proto__ = human;
+worker.__proto__ = human;
 
-	Worker.prototype = new Human();
-	Student.prototype = new Human();
-	Student.prototype = new Worker();
+console.log('Worker', worker.name, worker.education);
+console.log('Student', student.name,student.education );
 
-	var newStudent1 = new Student('KAI', 787);
-	var newStudent2 = new Student('KPI', 467);
-	var newStudent3 = new Student('KNUBA', 39658);
-	//newStudent.working();
-	console.log('newStudent1', newStudent1.education);
-	console.log('newStudent2', newStudent2.education);
-	console.log('newStudent3', newStudent3.education);
+for (var i=0;i<5;i++){
+  worker.work();
+  student.watchShow();
+
+};
+
+
+console.log('Weight and slasry after working', worker.weight, worker.salary);
+console.log('Weight an salary after wacthing show', student.weight, student.grant);
+
+console.log(worker);
+console.log(student);
+
 });
